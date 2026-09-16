@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Peminjam</title>
+</head>
+
+<body>
+    <header>
+        <h1>Sistem Peminjaman Alat Musik Studio</h1>
+        <p> Tambah Data Peminjam Baru : </p>
+    </header>
+    <nav>
+        <a href="../index.html">Beranda</a>
+        <a href="../alat/list.html">Data Alat</a>
+        <a href="list.html">Data Peminjam</a>
+        <a href="tambah.html">Tambah Peminjam</a>
+    </nav>
+    <main>
+        <section>
+            <article>
+                <h2>Formulir Tambah Peminjam</h2>
+                <form action="#" method="post">
+                    <p>
+                        <label for="kode_peminjam">Kode Peminjam : </label><br>
+                        <input type="text" id="kode_peminjam" name="kode_peminjam" placeholder="Contoh: PJ005" required>
+                    </p>
+                    <P>
+                        <Label for="nama_peminjam">Nama Peminjam</Label><br>
+                        <input type="text" id="nama_peminjam" name="nama_peminjam" placeholder="Contoh: Siti Aminah"
+                            required>
+                    </P>
+                    <p>
+                        <label for="no_hp">No WhatsApp:</label><br>
+                        <input type="tel" id="no_hp" name="no_hp" placeholder="Contoh: 081234567890" required>
+                    </p>
+                    <p>
+                        <label for="kategori_member">Kategori Member: </label>
+                        <select id="kategori_member" name="kategori_member" required>
+                            <option value="">-- Pilih Kategori Member --</option>
+                            <option value="Regular">Regular</option>
+                            <option value="Member VIP">Member VIP</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="alamat">Alamat Lengkap:</label><br>
+                        <textarea id="alamat" name="alamat" rows="4" cols="30" placeholder="Masukkan alamat lengkap..."
+                            required></textarea>
+                    </p>
+                    <p>
+                        <button type="submit">Simpan Data</button>
+                        <button type="reset">Batal</button>
+                    </p>
+                </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Sistem Peminjaman Alat Musik Studio</p>
+    </footer>
+</body>
+
+</html>
