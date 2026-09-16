@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Alat</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
@@ -24,18 +25,19 @@
             <article>
                 <h2> Formulir Tambah Unit Alat</h2>
                 <form action="#" method="POST">
-                    <p>
-                        <label for="kode_alat">Kode Alat:</label><br>
-                        <input type="text" id="kode_alat" name="kode_alat" placeholder="Contoh: AM007" required>
-                    </p>
-                    <p>
-                        <label for="nama_alat">Nama Alat</label><br>
-                        <input type="text" id="nama_alat" name="nama_alat"
+                    <div class="form-group">
+                        <label for="kode_alat">Kode Alat:</label>
+                        <input type="text" id="kode_alat" name="kode_alat" class="form-control"
+                            placeholder="Contoh: AM007" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nama_alat">Nama Alat:</label>
+                        <input type="text" id="nama_alat" name="nama_alat" class="form-control"
                             placeholder="Contoh: Gitar Bass Ibanez GSR200" required>
-                    </p>
-                    <p>
-                        <label for="kategori">Kategori:</label><br>
-                        <select id="kategori" name="kategori" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="kategori">Kategori:</label>
+                        <select id="kategori" name="kategori" class="form-control" required>
                             <option value="">-- Pilih Kategori --</option>
                             <option value="Gitar Akustik">Gitar Akustik</option>
                             <option value="Gitar Elektrik">Gitar Elektrik</option>
@@ -43,27 +45,24 @@
                             <option value="Keyboard">Keyboard</option>
                             <option value="Perangkat Audio">Perangkat Audio</option>
                         </select>
-                    </p>
-                    <p>
-                        <label for="tarif">Tarif / Jam (RP):</label><br>
-                        <input type="number" id="tarif" name="tarif" placeholder="Contoh: 20000" min="1000" step="500"
-                            required>
-                    </p>
-                    <p>
-                        <label>Status Unit:</label><br>
-                        <input type="radio" id="tersedia" name="status" value="Tersedia">
-                        <label for="tersedia">Tersedia</label><br>
+                    </div>
+                    <div>
+                        <div class="form-group">
+                            <label>Status Unit:</label><br>
+                            <input type="radio" id="tersedia" name="status" value="Tersedia">
+                            <label for="tersedia" style="display:inline; font-weight:normal;">Tersedia</label> &nbsp;
 
-                        <input type="radio" id="dipinjam" name="status" value="Dipinjam">
-                        <label for="dipinjam">Dipinjam</label><br>
+                            <input type="radio" id="dipinjam" name="status" value="Dipinjam">
+                            <label for="dipinjam" style="display:inline; font-weight:normal;">Dipinjam</label> &nbsp;
 
-                        <input type="radio" id="maintenance" name="status" value="Maintenance">
-                        <label for="maintenance">Maintenance</label>
-                    </p>
-                    <p>
-                        <button type="submit">Simpan Data</button>
-                        <button type="reset">Batal</button>
-                    </p>
+                            <input type="radio" id="maintenance" name="status" value="Maintenance">
+                            <label for="maintenance" style="display:inline; font-weight:normal;">Maintenance</label>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Simpan Data</button>
+                            <button type="reset" class="btn btn-secondary">Batal</button>
+                        </div>
                 </form>
             </article>
         </section>
