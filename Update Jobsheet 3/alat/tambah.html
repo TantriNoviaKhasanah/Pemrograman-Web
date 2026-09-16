@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Alat</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Sistem Peminjaman Alat Musik Studio</h1>
+        <p>Tambah Data Alat Musik</p>
+    </header>
+    <nav>
+        <a href="../index.html">Beranda</a>
+        <a href="list.html">Data Alat</a>
+        <a href="tambah.html">Tambah Alat</a>
+        <a href="../peminjam/list.html">Data Peminjam</a>
+        <a href="../peminjam/tambah.html">Tambah Peminjam</a>
+    </nav>
+    <main>
+        <section>
+            <article>
+                <h2> Formulir Tambah Unit Alat</h2>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="kode_alat">Kode Alat:</label>
+                        <input type="text" id="kode_alat" name="kode_alat" class="form-control"
+                            placeholder="Contoh: AM007" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nama_alat">Nama Alat:</label>
+                        <input type="text" id="nama_alat" name="nama_alat" class="form-control"
+                            placeholder="Contoh: Gitar Bass Ibanez GSR200" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="kategori">Kategori:</label>
+                        <select id="kategori" name="kategori" class="form-control" required>
+                            <option value="">-- Pilih Kategori --</option>
+                            <option value="Gitar Akustik">Gitar Akustik</option>
+                            <option value="Gitar Elektrik">Gitar Elektrik</option>
+                            <option value="Perkusi">Perkusi</option>
+                            <option value="Keyboard">Keyboard</option>
+                            <option value="Perangkat Audio">Perangkat Audio</option>
+                        </select>
+                    </div>
+                    <div>
+                        <div class="form-group">
+                            <label>Status Unit:</label><br>
+                            <input type="radio" id="tersedia" name="status" value="Tersedia">
+                            <label for="tersedia" style="display:inline; font-weight:normal;">Tersedia</label> &nbsp;
+
+                            <input type="radio" id="dipinjam" name="status" value="Dipinjam">
+                            <label for="dipinjam" style="display:inline; font-weight:normal;">Dipinjam</label> &nbsp;
+
+                            <input type="radio" id="maintenance" name="status" value="Maintenance">
+                            <label for="maintenance" style="display:inline; font-weight:normal;">Maintenance</label>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Simpan Data</button>
+                            <button type="reset" class="btn btn-secondary">Batal</button>
+                        </div>
+                </form>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Sistem Peminjaman Alat Musik Studio</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Peminjam</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Sistem Peminjaman Alat Musik Studio</h1>
+        <p> Tambah Data Peminjam Baru : </p>
+    </header>
+    <nav>
+        <a href="../index.html">Beranda</a>
+        <a href="../alat/list.html">Data Alat</a>
+        <a href="list.html">Data Peminjam</a>
+        <a href="tambah.html">Tambah Peminjam</a>
+    </nav>
+    <main>
+        <section>
+            <article>
+                <h2>Formulir Tambah Peminjam</h2>
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="id_peminjam">ID Peminjam : </label>
+                        <input type="text" id="id_peminjam" name="id_peminjam" class="form-control"
+                            placeholder="Contoh: PJ005" required>
+                    </div>
+                    <div class="form-group">
+                        <Label for="nama_peminjam">Nama Lengkap : </Label>
+                        <input type="text" id="nama_peminjam" name="nama_peminjam" class="form-control"
+                            placeholder="Contoh: Siti Aminah" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="no_hp">No. Telepon / WhatsApp:</label>
+                        <input type="tel" id="no_hp" name="no_hp" class="form-control"
+                            placeholder="Contoh: 081234567890" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="alamat">Alamat Lengkap:</label>
+                        <textarea id="alamat" name="alamat" class="form-control" rows="3"
+                            placeholder="Masukkan alamat peminjam" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Simpan Data</button>
+                        <button type="reset" class="btn btn-secondary">Batal</button>
+                    </div>
+                </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Sistem Peminjaman Alat Musik Studio</p>
+    </footer>
+</body>
+
+</html>
