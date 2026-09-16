@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Alat</title>
+</head>
+<body>
+    <header>
+        <h1>Sistem Peminjaman Alat Musik Studio</h1>
+        <p>Tambah Data Alat Musik</p>
+    </header>
+    <nav>
+        <a href="../index.html">Beranda</a>
+        <a href="list.html">Data Alat</a>
+        <a href="tambah.html">Tambah Alat</a>
+        <a href="../peminjam/list.html">Data Peminjam</a>
+        <a href="../peminjam/tambah.html">Tambah Peminjam</a>
+    </nav>
+<main>
+    <section>
+        <article>
+            <h2> Formulir Tambah Unit Alat</h2>
+            <form action="#" method="POST">
+<p>
+    <label for="kode_alat">Kode Alat:</label><br>
+    <input type="text" id="kode_alat" name="kode_alat" placeholder="Contoh: AM007" required>
+</p>
+<p>
+    <label for="nama_alat">Nama Alat</label><br>
+    <input type="text" id="nama_alat" name="nama_alat" placeholder="Contoh: Gitar Bass Ibanez GSR200" required>
+</p>
+<p>
+    <label for="kategori">Kategori:</label><br>
+    <select id="kategori" name="kategori" required>
+        <option value="">-- Pilih Kategori --</option>
+        <option value="Gitar Akustik">Gitar Akustik</option>
+        <option value="Gitar Elektrik">Gitar Elektrik</option>
+        <option value="Perkusi">Perkusi</option>
+        <option value="Keyboard">Keyboard</option>
+        <option value="Perangkat Audio">Perangkat Audio</option>
+</select>
+</p>
+<p>
+    <label for="tarif">Tarif / Jam (RP):</label><br>
+    <input type="number" id="tarif" name="tarif" placeholder="Contoh: 20000" min="1000" step="500" required>
+</p>
+<p>
+    <label>Status Unit:</label><br>
+    <input type="radio" id="tersedia" name="status" value="Tersedia">
+    <label for="tersedia">Tersedia</label><br>
+
+    <input type="radio" id="dipinjam" name="status" value="Dipinjam">
+    <label for="dipinjam">Dipinjam</label><br>
+
+    <input type="radio" id="maintenance" name="status" value="Maintenance">
+    <label for="maintenance">Maintenance</label>
+</p>
+<p>
+    <button type="submit">Simpan Data</button>
+    <button type="reset">Batal</button>
+</p>
+            </form>
+        </article>
+    </section>
+</main>
+    <footer>
+        <p>&copy; 2026 Sistem Peminjaman Alat Musik Studio</p>
+    </footer>
+</body>
+</html>
