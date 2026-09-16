@@ -14,16 +14,23 @@
         <p>Data Alat Musik</p>
     </header>
     <nav>
-        <a href="../index.html">Beranda</a>
-        <a href="list.html">Data Alat</a>
-        <a href="tambah.html">Tambah Alat</a>
-        <a href="../peminjam/list.html">Data Peminjam</a>
-        <a href="../peminjam/tambah.html">TambahPeminjam</a>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            ☰
+        </label>
+        <div class="menu">
+            <a href="../index.html">Beranda</a>
+            <a href="list.html">Data Alat</a>
+            <a href="tambah.html">Tambah Alat</a>
+            <a href="../peminjam/list.html">Data Peminjam</a>
+            <a href="../peminjam/tambah.html">TambahPeminjam</a>
+        </div>
     </nav>
     <main>
         <section>
             <article>
                 <h2>Daftar Alat Musik</h2>
+                <div class="table-responsive"></div>
                 <table border="1">
                     <thead>
                         <tr>
