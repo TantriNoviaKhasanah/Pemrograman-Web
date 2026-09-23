@@ -3,94 +3,112 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Alat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sistem Peminjaman Alat Musik Studio | Data Alat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
-    <header>
-        <h1>Sistem Peminjaman Alat Musik Studio</h1>
-        <p>Data Alat Musik</p>
-    </header>
-    <nav>
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icon">
-            ☰
-        </label>
-        <div class="menu">
-            <a href="../index.html">Beranda</a>
-            <a href="list.html">Data Alat</a>
-            <a href="tambah.html">Tambah Alat</a>
-            <a href="../peminjam/list.html">Data Peminjam</a>
-            <a href="../peminjam/tambah.html">TambahPeminjam</a>
+    <header class="navbar navbar-expand-lg navbar-dark" style="background-color:#5c1030;">
+        <div class="container">
+            <a class="navbar-brand fw-semibold" href="../index.html">
+                Sistem Peminjaman Alat Musik Studio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <nav class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="list.html">Data Alat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tambah.html">Tambah Alat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../peminjam/list.html">Data Peminjam</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../peminjam/tambah.html">Tambah Peminjam</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-    </nav>
-    <main>
-        <section>
-            <article>
-                <h2>Daftar Alat Musik</h2>
-                <div class="table-responsive"></div>
-                <table border="1">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Kode Alat</th>
-                            <th>Nama Alat</th>
-                            <th>Kategori</th>
-                            <th>Tarif / Jam</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>AM001</td>
-                            <td>Gitar Akustik Yamaha F310</td>
-                            <td>Gitar Akustik</td>
-                            <td>Rp 15.000</td>
-                            <td>Tersedia</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>AM002</td>
-                            <td>Gitar Elektrik Fender Stratocaster</td>
-                            <td>Gitar Elektrik</td>
-                            <td>Rp 25.000</td>
-                            <td>Dipinjam</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>AM003</td>
-                            <td>Drum Set Pearl Export</td>
-                            <td>Perkusi</td>
-                            <td>Rp 35.000</td>
-                            <td>Tersedia</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>AM004</td>
-                            <td>Keyboard Yamaha PSR-SX900</td>
-                            <td>Keyboard</td>
-                            <td>Rp 30.000</td>
-                            <td>Tersedia</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>AM005</td>
-                            <td>Mixer Audio Behringer X32</td>
-                            <td>Perangkat Audio</td>
-                            <td>Rp 40.000</td>
-                            <td>Maintenance</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </article>
+    </header>
+    <main class="container my-4">
+        <section class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h2 class="card-title mb-3" style="color:#5c1030;">
+                    Daftar Alat Musik
+                </h2>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover align-middle">
+                        <thead style="background-color:#5c1030;">
+                            <tr class="text-white">
+                                <th>No</th>
+                                <th>Kode Alat</th>
+                                <th>Nama Alat</th>
+                                <th>Kategori</th>
+                                <th>Tarif / Jam</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>AM001</td>
+                                <td>Gitar Akustik Yamaha F310</td>
+                                <td>Gitar Akustik</td>
+                                <td>Rp 15.000</td>
+                                <td>Tersedia</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>AM002</td>
+                                <td>Gitar Elektrik Fender Stratocaster</td>
+                                <td>Gitar Elektrik</td>
+                                <td>Rp 25.000</td>
+                                <td>Dipinjam</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>AM003</td>
+                                <td>Drum Set Pearl Export</td>
+                                <td>Perkusi</td>
+                                <td>Rp 35.000</td>
+                                <td>Tersedia</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>AM004</td>
+                                <td>Keyboard Yamaha PSR-SX900</td>
+                                <td>Keyboard</td>
+                                <td>Rp 30.000</td>
+                                <td>Tersedia</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>AM005</td>
+                                <td>Mixer Audio Behringer X32</td>
+                                <td>Perangkat Audio</td>
+                                <td>Rp 40.000</td>
+                                <td>Maintenance</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2026 Sistem Peminjaman Alat Musik Studio</p>
+    <footer class="text-center text-secondary py-3 small">
+        <p class="mb-0">&copy; 2026 Sistem Peminjaman Alat Musik Studio &mdash; Jobsheet 3 (Bootstrap)
+        </p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
