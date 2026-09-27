@@ -1,0 +1,72 @@
+[
+    {
+        "kode_alat": "AM001",
+        "nama_alat": "Gitar Akustik Yamaha F310",
+        "kategori": "Gitar Akustik",
+        "tarif": 15000,
+        "status": "Tersedia"
+    },
+    {
+        "kode_alat": "AM002",
+        "nama_alat": "Gitar Elektrik Fender Stratocaster",
+        "kategori": "Gitar Elektrik",
+        "tarif": 25000,
+        "status": "Dipinjam"
+    },
+    {
+        "kode_alat": "AM003",
+        "nama_alat": "Drum Set Pearl Export",
+        "kategori": "Perkusi",
+        "tarif": 35000,
+        "status": "Tersedia"
+    },
+    {
+        "kode_alat": "AM004",
+        "nama_alat": "Keyboard Yamaha PSR-SX900",
+        "kategori": "Keyboard",
+        "tarif": 30000,
+        "status": "Tersedia"
+    },
+    {
+        "kode_alat": "AM005",
+        "nama_alat": "Mixer Audio Behringer X32",
+        "kategori": "Perangkat Audio",
+        "tarif": 40000,
+        "status": "Maintenance"
+    },
+    {
+        "kode_alat": "AM006",
+        "nama_alat": "Gitar Akustik Taylor 214ce",
+        "kategori": "Gitar Akustik",
+        "tarif": 18000,
+        "status": "Tersedia"
+    },
+    {
+        "kode_alat": "AM007",
+        "nama_alat": "Gitar Elektrik Gibson Les Paul",
+        "kategori": "Gitar Elektrik",
+        "tarif": 32000,
+        "status": "Dipinjam"
+    },
+    {
+        "kode_alat": "AM008",
+        "nama_alat": "Cajon Perkusi Studio",
+        "kategori": "Perkusi",
+        "tarif": 20000,
+        "status": "Tersedia"
+    },
+    {
+        "kode_alat": "AM009",
+        "nama_alat": "Keyboard Roland Fantom",
+        "kategori": "Keyboard",
+        "tarif": 45000,
+        "status": "Tersedia"
+    },
+    {
+        "kode_alat": "AM010",
+        "nama_alat": "Mixer Audio Yamaha MG10",
+        "kategori": "Perangkat Audio",
+        "tarif": 22000,
+        "status": "Maintenance"
+    }
+]

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100" style="background-color: #faf3f6;">
     <header class="navbar navbar-expand-lg navbar-dark" style="background-color:#5c1030;">
         <div class="container">
             <a class="navbar-brand fw-semibold" href="../index.html">
@@ -65,89 +65,27 @@
                                 <th>Aksi</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>AM001</td>
-                                <td>Gitar Akustik Yamaha F310</td>
-                                <td>Gitar Akustik</td>
-                                <td>Rp 15.000</td>
-                                <td>Tersedia</td>
-                                <td>
-                                    <button type="button" class="btn btn-danger btn-sm btn-hapus">
-                                        Hapus
-                                    </button>
-                                </td>
-                            </tr>
 
-                            <tr>
-                                <td>2</td>
-                                <td>AM002</td>
-                                <td>Gitar Elektrik Fender Stratocaster</td>
-                                <td>Gitar Elektrik</td>
-                                <td>Rp 25.000</td>
-                                <td>Dipinjam</td>
-                                <td>
-                                    <button type="button" class="btn btn-danger btn-sm btn-hapus">
-                                        Hapus
-                                    </button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>3</td>
-                                <td>AM003</td>
-                                <td>Drum Set Pearl Export</td>
-                                <td>Perkusi</td>
-                                <td>Rp 35.000</td>
-                                <td>Tersedia</td>
-                                <td>
-                                    <button type="button" class="btn btn-danger btn-sm btn-hapus">
-                                        Hapus
-                                    </button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>4</td>
-                                <td>AM004</td>
-                                <td>Keyboard Yamaha PSR-SX900</td>
-                                <td>Keyboard</td>
-                                <td>Rp 30.000</td>
-                                <td>Tersedia</td>
-                                <td>
-                                    <button type="button" class="btn btn-danger btn-sm btn-hapus">
-                                        Hapus
-                                    </button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>5</td>
-                                <td>AM005</td>
-                                <td>Mixer Audio Behringer X32</td>
-                                <td>Perangkat Audio</td>
-                                <td>Rp 40.000</td>
-                                <td>Maintenance</td>
-                                <td>
-                                    <button type="button" class="btn btn-danger btn-sm btn-hapus">
-                                        Hapus
-                                    </button>
-                                </td>
-                            </tr>
+                        <tbody id="tabelAlatBody">
                         </tbody>
+
                     </table>
+                    <div id="loading-indicator" class="text-center py-3">
+                        Memuat data alat...
+                    </div>
+
                 </div>
             </div>
         </section>
     </main>
-    <footer class="text-center text-secondary py-3 small">
+    <footer class="text-white text-center py-3 small mt-auto" style="background-color: #5c1030;">
         <p class="mb-0">
             &copy; 2026 Sistem Peminjaman Alat Musik Studio
         </p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/alat.js"></script>
 </body>
 
 </html>

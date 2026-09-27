@@ -44,7 +44,6 @@ function initValidasiForm() {
         }
     });
 }
-
 function initTableFilter() {
     const inputAlat = document.querySelector("#cariAlat");
     const tabelAlat = document.querySelector("#tabelAlat");
@@ -86,23 +85,19 @@ function initTableFilter() {
         });
     }
 }
-
-function initHapusData() {
-    const tombolHapus = document.querySelectorAll(".btn-hapus");
-
-    tombolHapus.forEach(function (tombol) {
-        tombol.addEventListener("click", function () {
+function initHapusConfirm() {
+    document.addEventListener("click", function (event) {
+        if (event.target.classList.contains("btn-hapus")) {
             const yakin = confirm("Apakah kamu yakin ingin menghapus data ini?");
 
             if (yakin) {
-                const baris = tombol.closest("tr");
+                const baris = event.target.closest("tr");
                 baris.remove();
             }
-        });
+        }
     });
 }
-
 initNavbar();
 initValidasiForm();
 initTableFilter();
-initHapusData();
+initHapusConfirm();

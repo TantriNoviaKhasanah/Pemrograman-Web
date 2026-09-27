@@ -1,0 +1,30 @@
+[
+    {
+        "kode_peminjam": "PJ001",
+        "nama_peminjam": "Ajeng Rahmania",
+        "no_whatsapp": "082352786800",
+        "alamat": "Jl. Pegangsaan Timur No 07",
+        "status_member": "Member VIP"
+    },
+    {
+        "kode_peminjam": "PJ002",
+        "nama_peminjam": "Azelia Chernanda",
+        "no_whatsapp": "087890634200",
+        "alamat": "Jl. Semeru No 77",
+        "status_member": "Regular"
+    },
+    {
+        "kode_peminjam": "PJ003",
+        "nama_peminjam": "Belva Nathaniela",
+        "no_whatsapp": "089908767753",
+        "alamat": "Jl. Rinjani No 33",
+        "status_member": "Regular"
+    },
+    {
+        "kode_peminjam": "PJ004",
+        "nama_peminjam": "Chezara Nashita",
+        "no_whatsapp": "083478665211",
+        "alamat": "Jl. Kerinci No 69",
+        "status_member": "Member VIP"
+    }
+]

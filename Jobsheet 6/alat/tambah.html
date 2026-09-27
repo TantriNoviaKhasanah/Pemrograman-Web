@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100" style="background-color: #faf3f6;">
     <header class="navbar navbar-expand-lg navbar-dark" style="background-color:#5c1030;">
         <div class="container">
             <a class="navbar-brand fw-semibold" href="../index.html">Sistem Peminjaman Alat Musik Studio</a>
@@ -36,7 +36,7 @@
                     <div class="mb-3">
                         <label for="kode_alat" class="form-label fw-semibold">Kode Alat</label>
                         <input type="text" class="form-control" id="kode_alat" name="kode_alat"
-                            placeholder="Contoh: AM007" required>
+                            placeholder="Contoh: AM011" required>
                     </div>
                     <div class="mb-3">
                         <label for="nama_alat" class="form-label fw-semibold">Nama Alat</label>
@@ -85,10 +85,13 @@
             </div>
         </section>
     </main>
-    <footer class="text-center text-secondary py-3 small">
-        <p class="mb-0">&copy; 2026 Sistem Peminjaman Alat Musik Studio &mdash; Jobsheet 3 (Bootstrap)</p>
+    <footer class="text-white text-center py-3 small mt-auto" style="background-color: #5c1030;">
+        <p class="mb-0">
+            &copy; 2026 Sistem Peminjaman Alat Musik Studio
+        </p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/app.js"></script>
 </body>
 
 </html>
