@@ -65,3 +65,8 @@ main.container {
     color: #fff;
     border-color: #5c1030;
 }
+
+.pagination a:hover {
+    background-color: #f3c9dc;
+    border-color: #5c1030;
+}

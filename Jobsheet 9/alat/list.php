@@ -45,6 +45,9 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                             <input type="text" class="form-control" id="search-input" name="q" value="<?php echo htmlspecialchars($keyword); ?>" placeholder="Contoh: Gitar, Drum, Keyboard...">
                         </div>
                         <button type="submit" class="btn" style="background-color:#5c1030; color:#fff;">Cari</button>
+                        <?php if ($keyword !== ''): ?>
+                        <a href="list.php" class="btn btn-outline-secondary">Reset</a>
+                        <?php endif; ?>
                     </form>
                 </div>
 
@@ -83,18 +86,3 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                                         </form>
                                     </td>
                                 </tr>
-                                <?php endforeach; ?>
-                            <?php endif; ?>
-                        </tbody>
-                    </table>
-                </div>
-
-                <nav class="pagination mt-3">
-                    <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-                    <a href="list.php?page=<?php echo $i; ?><?php echo $keyword !== '' ? '&q=' . urlencode($keyword) : ''; ?>"
-                       class="<?php echo $i === $page ? 'active' : ''; ?>"><?php echo $i; ?></a>
-                    <?php endfor; ?>
-                </nav>
-            </div>
-        </section>
-<?php include __DIR__ . '/../includes/footer.php'; ?>

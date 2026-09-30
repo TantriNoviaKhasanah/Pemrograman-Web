@@ -66,7 +66,7 @@ $statusList = ['Tersedia', 'Dipinjam', 'Maintenance'];
                         </div>
                     </div>
                     <button type="submit" class="btn" style="background-color:#5c1030; color:#fff;">Update</button>
-                    <a href="list.php" class="btn btn-secondary">Batal</a>
+                    <a href="list.php" class="btn btn-secondary">&larr; Batal</a>
                 </form>
             </div>
         </section>

@@ -45,6 +45,9 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                             <input type="text" class="form-control" id="search-input" name="q" value="<?php echo htmlspecialchars($keyword); ?>" placeholder="Contoh: Ajeng, Belva, Ciara...">
                         </div>
                         <button type="submit" class="btn" style="background-color:#5c1030; color:#fff;">Cari</button>
+                        <?php if ($keyword !== ''): ?>
+                        <a href="list.php" class="btn btn-outline-secondary">Reset</a>
+                        <?php endif; ?>
                     </form>
                 </div>
 
