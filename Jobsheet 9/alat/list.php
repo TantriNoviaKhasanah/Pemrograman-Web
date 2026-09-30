@@ -32,6 +32,7 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
         <section class="card shadow-sm mb-4">
             <div class="card-body">
                 <h2 class="card-title mb-3" style="color:#5c1030;">Daftar Alat Musik</h2>
+                <p class="text-muted small mb-3">Menampilkan <?php echo count($daftarAlat); ?> dari <?php echo $totalRows; ?> alat.</p>
 
                 <?php if ($flash): ?>
                     <p class="flash flash-<?php echo $flash['type']; ?>"><?php echo htmlspecialchars($flash['pesan']); ?></p>
@@ -41,7 +42,7 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                     <form method="get" action="list.php" class="d-flex gap-2 align-items-end">
                         <div>
                             <label for="search-input" class="form-label fw-semibold">Cari Data Alat</label>
-                            <input type="text" class="form-control" id="search-input" name="q" value="<?php echo htmlspecialchars($keyword); ?>" placeholder="Ketik nama alat...">
+                            <input type="text" class="form-control" id="search-input" name="q" value="<?php echo htmlspecialchars($keyword); ?>" placeholder="Contoh: Gitar, Drum, Keyboard...">
                         </div>
                         <button type="submit" class="btn" style="background-color:#5c1030; color:#fff;">Cari</button>
                     </form>
