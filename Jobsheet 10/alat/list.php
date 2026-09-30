@@ -5,6 +5,7 @@ require __DIR__ . '/../includes/koneksi.php';
 
 $flash = $_SESSION['flash'] ?? null;
 unset($_SESSION['flash']);
+$sudahLogin = isset($_SESSION['user_id']);
 
 $perPage = 5;
 $page = max(1, (int) ($_GET['page'] ?? 1));
@@ -38,6 +39,10 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                     <p class="flash flash-<?php echo $flash['type']; ?>"><?php echo htmlspecialchars($flash['pesan']); ?></p>
                 <?php endif; ?>
 
+                <?php if (!$sudahLogin): ?>
+                <p class="flash flash-error">Login sebagai petugas untuk menambah, mengubah, atau menghapus data alat.</p>
+                <?php endif; ?>
+
                 <div class="search-box mb-3">
                     <form method="get" action="list.php" class="d-flex gap-2 align-items-end">
                         <div>
@@ -61,7 +66,7 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                                 <th>Kategori</th>
                                 <th>Tarif / Jam</th>
                                 <th>Status</th>
-                                <th>Aksi</th>
+                                <?php if ($sudahLogin): ?><th>Aksi</th><?php endif; ?>
                             </tr>
                         </thead>
                         <tbody>
@@ -78,6 +83,7 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                                     <td><?php echo htmlspecialchars($alat['kategori']); ?></td>
                                     <td>Rp <?php echo number_format($alat['tarif'], 0, ',', '.'); ?></td>
                                     <td><?php echo htmlspecialchars($alat['status']); ?></td>
+                                    <?php if ($sudahLogin): ?>
                                     <td>
                                         <a href="edit.php?id=<?php echo $alat['id']; ?>" class="btn btn-warning btn-sm text-white">Edit</a>
                                         <form class="form-hapus d-inline" method="post" action="hapus.php">
@@ -85,8 +91,9 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                                             <button type="submit" class="btn btn-danger btn-sm btn-hapus">Hapus</button>
                                         </form>
                                     </td>
+                                    <?php endif; ?>
                                 </tr>
-                               <?php endforeach; ?>
+                                <?php endforeach; ?>
                             <?php endif; ?>
                         </tbody>
                     </table>

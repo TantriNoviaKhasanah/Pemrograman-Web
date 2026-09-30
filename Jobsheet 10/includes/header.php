@@ -1,15 +1,14 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+$sudahLogin = isset($_SESSION['user_id']);
 
-// Prefix relatif ke root proyek ini (bukan root domain), dihitung otomatis
-// dari kedalaman folder halaman yang sedang dibuka.
 $__jobsheetRoot = dirname(__DIR__);
 $__scriptDir = dirname($_SERVER['SCRIPT_FILENAME']);
 $__rel = ltrim(str_replace('\\', '/', substr($__scriptDir, strlen($__jobsheetRoot))), '/');
 $base = $__rel === '' ? '' : str_repeat('../', substr_count($__rel, '/') + 1);
 
-// Nama halaman yang sedang dibuka (mis. "index.php", "alat/list.php"),
-// dipakai untuk menandai menu yang aktif.
 $__halaman = ($__rel === '' ? '' : $__rel . '/') . basename($_SERVER['SCRIPT_FILENAME']);
 ?>
 <!DOCTYPE html>
@@ -32,13 +31,14 @@ $__halaman = ($__rel === '' ? '' : $__rel . '/') . basename($_SERVER['SCRIPT_FIL
                 <span class="navbar-toggler-icon"></span>
             </button>
             <nav class="collapse navbar-collapse" id="navMenu">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item">
                         <a class="nav-link<?php echo $__halaman === 'index.php' ? ' active' : ''; ?>" href="<?php echo $base; ?>index.php">Beranda</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link<?php echo $__halaman === 'alat/list.php' ? ' active' : ''; ?>" href="<?php echo $base; ?>alat/list.php">Data Alat</a>
                     </li>
+                    <?php if ($sudahLogin): ?>
                     <li class="nav-item">
                         <a class="nav-link<?php echo $__halaman === 'alat/tambah.php' ? ' active' : ''; ?>" href="<?php echo $base; ?>alat/tambah.php">Tambah Alat</a>
                     </li>
@@ -48,6 +48,21 @@ $__halaman = ($__rel === '' ? '' : $__rel . '/') . basename($_SERVER['SCRIPT_FIL
                     <li class="nav-item">
                         <a class="nav-link<?php echo $__halaman === 'peminjam/tambah.php' ? ' active' : ''; ?>" href="<?php echo $base; ?>peminjam/tambah.php">Tambah Peminjam</a>
                     </li>
+                    <?php endif; ?>
+                </ul>
+                <ul class="navbar-nav">
+                    <?php if ($sudahLogin): ?>
+                    <li class="nav-item d-flex align-items-center me-2">
+                        <span class="text-white small">Halo, <?php echo htmlspecialchars($_SESSION['nama']); ?></span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo $base; ?>auth/logout.php">Logout</a>
+                    </li>
+                    <?php else: ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo $base; ?>auth/login.php">Login</a>
+                    </li>
+                    <?php endif; ?>
                 </ul>
             </nav>
         </div>

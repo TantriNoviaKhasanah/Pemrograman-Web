@@ -1,4 +1,5 @@
 <?php
+require __DIR__ . '/../includes/auth.php';
 $page_title = "Tambah Peminjam";
 include __DIR__ . '/../includes/header.php';
 
@@ -20,7 +21,7 @@ unset($_SESSION['flash']);
                     </div>
                     <div class="mb-3">
                         <label for="nama_peminjam" class="form-label fw-semibold">Nama Lengkap</label>
-                        <input type="text" class="form-control" id="nama_peminjam" name="nama_peminjam" placeholder="Contoh: Siti Aminah" required>
+                        <input type="text" class="form-control" id="nama_peminjam" name="nama_peminjam" placeholder="Contoh: Ajeng Rahmania" required>
                     </div>
                     <div class="mb-3">
                         <label for="no_hp" class="form-label fw-semibold">No. Telepon / WhatsApp</label>
