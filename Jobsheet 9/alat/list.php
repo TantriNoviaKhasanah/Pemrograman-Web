@@ -86,3 +86,18 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                                         </form>
                                     </td>
                                 </tr>
+                               <?php endforeach; ?>
+                            <?php endif; ?>
+                        </tbody>
+                    </table>
+                </div>
+
+                <nav class="pagination mt-3">
+                    <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+                    <a href="list.php?page=<?php echo $i; ?><?php echo $keyword !== '' ? '&q=' . urlencode($keyword) : ''; ?>"
+                       class="<?php echo $i === $page ? 'active' : ''; ?>"><?php echo $i; ?></a>
+                    <?php endfor; ?>
+                </nav>
+            </div>
+        </section>
+<?php include __DIR__ . '/../includes/footer.php'; ?>
