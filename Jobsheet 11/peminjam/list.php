@@ -33,17 +33,17 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
         <section class="card shadow-sm mb-4">
             <div class="card-body">
                 <h2 class="card-title mb-3" style="color:#5c1030;">Daftar Peminjam Alat Musik</h2>
-                <p class="text-muted small mb-3">Menampilkan <?php echo count($daftarPeminjam); ?> dari <?php echo $totalRows; ?> peminjam.</p>
+                <p class="text-muted small mb-3">Menampilkan <?php echo count($daftarPeminjam); ?> dari <?php echo (int) $totalRows; ?> peminjam.</p>
 
                 <?php if ($flash): ?>
-                    <p class="flash flash-<?php echo $flash['type']; ?>"><?php echo htmlspecialchars($flash['pesan']); ?></p>
+                    <p class="flash flash-<?php echo e($flash['type']); ?>"><?php echo e($flash['pesan']); ?></p>
                 <?php endif; ?>
 
                 <div class="search-box mb-3">
                     <form method="get" action="list.php" class="d-flex gap-2 align-items-end">
                         <div>
                             <label for="search-input" class="form-label fw-semibold">Cari Data Peminjam</label>
-                            <input type="text" class="form-control" id="search-input" name="q" value="<?php echo htmlspecialchars($keyword); ?>" placeholder="Contoh: Ajeng, Belva, Ciara...">
+                            <input type="text" class="form-control" id="search-input" name="q" value="<?php echo e($keyword); ?>" placeholder="Contoh: Ajeng, Belva, Ciara...">
                         </div>
                         <button type="submit" class="btn" style="background-color:#5c1030; color:#fff;">Cari</button>
                         <?php if ($keyword !== ''): ?>
@@ -74,15 +74,16 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                                 <?php foreach ($daftarPeminjam as $i => $peminjam): ?>
                                 <tr>
                                     <td><?php echo $offset + $i + 1; ?></td>
-                                    <td><?php echo htmlspecialchars($peminjam['kode_peminjam']); ?></td>
-                                    <td><?php echo htmlspecialchars($peminjam['nama_peminjam']); ?></td>
-                                    <td><?php echo htmlspecialchars($peminjam['no_hp']); ?></td>
-                                    <td><?php echo htmlspecialchars($peminjam['alamat']); ?></td>
-                                    <td><?php echo htmlspecialchars($peminjam['status_member']); ?></td>
+                                    <td><?php echo e($peminjam['kode_peminjam']); ?></td>
+                                    <td><?php echo e($peminjam['nama_peminjam']); ?></td>
+                                    <td><?php echo e($peminjam['no_hp']); ?></td>
+                                    <td><?php echo e($peminjam['alamat']); ?></td>
+                                    <td><?php echo e($peminjam['status_member']); ?></td>
                                     <td>
-                                        <a href="edit.php?id=<?php echo $peminjam['id']; ?>" class="btn btn-warning btn-sm text-white">Edit</a>
+                                        <a href="edit.php?id=<?php echo (int) $peminjam['id']; ?>" class="btn btn-warning btn-sm text-white">Edit</a>
                                         <form class="form-hapus d-inline" method="post" action="hapus.php">
-                                            <input type="hidden" name="id" value="<?php echo $peminjam['id']; ?>">
+                                            <?php echo csrf_field(); ?>
+                                            <input type="hidden" name="id" value="<?php echo (int) $peminjam['id']; ?>">
                                             <button type="submit" class="btn btn-danger btn-sm btn-hapus">Hapus</button>
                                         </form>
                                     </td>

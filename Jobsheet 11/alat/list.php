@@ -5,7 +5,6 @@ require __DIR__ . '/../includes/koneksi.php';
 
 $flash = $_SESSION['flash'] ?? null;
 unset($_SESSION['flash']);
-$sudahLogin = isset($_SESSION['user_id']);
 
 $perPage = 5;
 $page = max(1, (int) ($_GET['page'] ?? 1));
@@ -33,10 +32,10 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
         <section class="card shadow-sm mb-4">
             <div class="card-body">
                 <h2 class="card-title mb-3" style="color:#5c1030;">Daftar Alat Musik</h2>
-                <p class="text-muted small mb-3">Menampilkan <?php echo count($daftarAlat); ?> dari <?php echo $totalRows; ?> alat.</p>
+                <p class="text-muted small mb-3">Menampilkan <?php echo count($daftarAlat); ?> dari <?php echo (int) $totalRows; ?> alat.</p>
 
                 <?php if ($flash): ?>
-                    <p class="flash flash-<?php echo $flash['type']; ?>"><?php echo htmlspecialchars($flash['pesan']); ?></p>
+                    <p class="flash flash-<?php echo e($flash['type']); ?>"><?php echo e($flash['pesan']); ?></p>
                 <?php endif; ?>
 
                 <?php if (!$sudahLogin): ?>
@@ -47,7 +46,7 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                     <form method="get" action="list.php" class="d-flex gap-2 align-items-end">
                         <div>
                             <label for="search-input" class="form-label fw-semibold">Cari Data Alat</label>
-                            <input type="text" class="form-control" id="search-input" name="q" value="<?php echo htmlspecialchars($keyword); ?>" placeholder="Contoh: Gitar, Drum, Keyboard...">
+                            <input type="text" class="form-control" id="search-input" name="q" value="<?php echo e($keyword); ?>" placeholder="Contoh: Gitar, Drum, Keyboard...">
                         </div>
                         <button type="submit" class="btn" style="background-color:#5c1030; color:#fff;">Cari</button>
                         <?php if ($keyword !== ''): ?>
@@ -78,16 +77,17 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                                 <?php foreach ($daftarAlat as $i => $alat): ?>
                                 <tr>
                                     <td><?php echo $offset + $i + 1; ?></td>
-                                    <td><?php echo htmlspecialchars($alat['kode_alat']); ?></td>
-                                    <td><?php echo htmlspecialchars($alat['nama_alat']); ?></td>
-                                    <td><?php echo htmlspecialchars($alat['kategori']); ?></td>
-                                    <td>Rp <?php echo number_format($alat['tarif'], 0, ',', '.'); ?></td>
-                                    <td><?php echo htmlspecialchars($alat['status']); ?></td>
+                                    <td><?php echo e($alat['kode_alat']); ?></td>
+                                    <td><?php echo e($alat['nama_alat']); ?></td>
+                                    <td><?php echo e($alat['kategori']); ?></td>
+                                    <td>Rp <?php echo number_format((int) $alat['tarif'], 0, ',', '.'); ?></td>
+                                    <td><?php echo e($alat['status']); ?></td>
                                     <?php if ($sudahLogin): ?>
                                     <td>
-                                        <a href="edit.php?id=<?php echo $alat['id']; ?>" class="btn btn-warning btn-sm text-white">Edit</a>
+                                        <a href="edit.php?id=<?php echo (int) $alat['id']; ?>" class="btn btn-warning btn-sm text-white">Edit</a>
                                         <form class="form-hapus d-inline" method="post" action="hapus.php">
-                                            <input type="hidden" name="id" value="<?php echo $alat['id']; ?>">
+                                            <?php echo csrf_field(); ?>
+                                            <input type="hidden" name="id" value="<?php echo (int) $alat['id']; ?>">
                                             <button type="submit" class="btn btn-danger btn-sm btn-hapus">Hapus</button>
                                         </form>
                                     </td>

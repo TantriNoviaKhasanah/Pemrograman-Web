@@ -11,10 +11,11 @@ unset($_SESSION['flash']);
                 <h2 class="card-title mb-3" style="color:#5c1030;">Formulir Tambah Unit Alat</h2>
 
                 <?php if ($flash): ?>
-                    <p class="flash flash-<?php echo $flash['type']; ?>"><?php echo htmlspecialchars($flash['pesan']); ?></p>
+                    <p class="flash flash-<?php echo e($flash['type']); ?>"><?php echo e($flash['pesan']); ?></p>
                 <?php endif; ?>
 
                 <form id="form-tambah" method="post" action="proses_tambah.php">
+                    <?php echo csrf_field(); ?>
                     <div class="mb-3">
                         <label for="kode_alat" class="form-label fw-semibold">Kode Alat</label>
                         <input type="text" class="form-control" id="kode_alat" name="kode_alat" placeholder="Contoh: AM011" required>

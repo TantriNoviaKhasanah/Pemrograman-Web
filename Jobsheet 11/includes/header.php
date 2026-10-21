@@ -2,6 +2,8 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+require_once __DIR__ . '/helpers.php';
+require_once __DIR__ . '/csrf.php';
 $sudahLogin = isset($_SESSION['user_id']);
 
 $__jobsheetRoot = dirname(__DIR__);
@@ -16,7 +18,7 @@ $__halaman = ($__rel === '' ? '' : $__rel . '/') . basename($_SERVER['SCRIPT_FIL
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sistem Peminjaman Alat Musik Studio<?php echo isset($page_title) ? ' | ' . $page_title : ''; ?></title>
+    <title>Sistem Peminjaman Alat Musik Studio<?php echo isset($page_title) ? ' | ' . e($page_title) : ''; ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo $base; ?>assets/css/style.css">
 </head>
@@ -53,7 +55,7 @@ $__halaman = ($__rel === '' ? '' : $__rel . '/') . basename($_SERVER['SCRIPT_FIL
                 <ul class="navbar-nav">
                     <?php if ($sudahLogin): ?>
                     <li class="nav-item d-flex align-items-center me-2">
-                        <span class="text-white small">Halo, <?php echo htmlspecialchars($_SESSION['nama']); ?></span>
+                        <span class="text-white small">Halo, <?php echo e($_SESSION['nama']); ?></span>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo $base; ?>auth/logout.php">Logout</a>

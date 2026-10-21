@@ -18,10 +18,11 @@ unset($_SESSION['flash']);
                 <h2 class="card-title mb-3" style="color:#5c1030;">Login Petugas</h2>
 
                 <?php if ($flash): ?>
-                    <p class="flash flash-<?php echo $flash['type']; ?>"><?php echo htmlspecialchars($flash['pesan']); ?></p>
+                    <p class="flash flash-<?php echo e($flash['type']); ?>"><?php echo e($flash['pesan']); ?></p>
                 <?php endif; ?>
 
                 <form method="post" action="proses_login.php">
+                    <?php echo csrf_field(); ?>
                     <div class="mb-3">
                         <label for="username" class="form-label fw-semibold">Username</label>
                         <input type="text" class="form-control" id="username" name="username" required>

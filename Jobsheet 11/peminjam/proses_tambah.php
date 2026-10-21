@@ -1,6 +1,9 @@
 <?php
 require __DIR__ . '/../includes/auth.php';
+require __DIR__ . '/../includes/csrf.php';
 require __DIR__ . '/../includes/koneksi.php';
+
+csrf_verify();
 
 $kodePeminjam = trim($_POST['kode_peminjam'] ?? '');
 $namaPeminjam = trim($_POST['nama_peminjam'] ?? '');
